@@ -1,0 +1,43 @@
+%\documentclass[12pt]{article}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+%\pagestyle{empty}
+%\begin{document}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-4.3,-0.2) rectangle (4.3,4.2);
+\draw [shift={(0,3.5)},fill=black,fill opacity=0.1] (0,0) -- (-142.09:0.22) arc (-142.09:-90:0.22) -- cycle;
+\draw [shift={(0,5)},line width=1.2pt]  plot[domain=3.79:5.64,variable=\t]({1*5*cos(\t r)+0*5*sin(\t r)},{0*5*cos(\t r)+1*5*sin(\t r)});
+\draw [line width=1.2pt,domain=-4.3:-4.0] plot(\x,{(-2-0*\x)/-1});
+\draw [line width=1.2pt,domain=4.0:4.3] plot(\x,{(--2-0*\x)/1});
+\draw [domain=-4.3:-6.0] plot(\x,{(-2.05-0.26*\x)/-0.26});
+\draw [domain=-4.3:-5] plot(\x,{(-4.05-0.58*\x)/-0.58});
+\draw [domain=-4.3:-4.0] plot(\x,{(-4.22-0.7*\x)/-0.7});
+\draw [domain=-4.3:-3.5] plot(\x,{(-7.27-1.45*\x)/-1.48});
+\draw [domain=-4.3:-3] plot(\x,{(-4-1*\x)/-1});
+\draw [domain=-4.3:-2.379011210034863] plot(\x,{(-1.81-0.6*\x)/-0.62});
+\draw [domain=-4.3:-1.6863598943090659] plot(\x,{(-3.83-1.93*\x)/-1.95});
+\draw [domain=-4.3:-0.9171067187262788] plot(\x,{(-2.09-2.08*\x)/-2.08});
+\draw [domain=-4.3:0.0] plot(\x,{(-0-1.61*\x)/-1.61});
+\draw [domain=-4.3:1.1435150769947389] plot(\x,{(--1.77-1.76*\x)/-1.77});
+\draw [domain=-4.3:3] plot(\x,{(--4.75-2.37*\x)/-2.37});
+\draw [domain=-4.3:5.0] plot(\x,{(--10.77-3.59*\x)/-3.59});
+\draw [domain=-4.3:6.0] plot(\x,{(--14.58-3.64*\x)/-3.64});
+\draw [domain=-4.3:7.0] plot(\x,{(--17.34-3.47*\x)/-3.47});
+\draw [line width=2pt,dash pattern=on 7pt off 7pt,domain=-4.3:4.3] plot(\x,{(-0-0*\x)/3});
+\draw [line width=2pt] (0,0.5) circle (0.5cm);
+\draw [line width=1.2pt,dash pattern=on 7pt off 7pt] (0,3.5)-- (0,0.5);
+\draw [line width=2pt] (-2.7,1.4) circle (0.5cm);
+\draw [line width=1.2pt,dash pattern=on 7pt off 7pt] (-2.7,1.4)-- (0,3.5);
+\draw (0.23,1.28) node[anchor=north west] {r, m};
+\draw [->,line width=1.2pt] (0,3.5) -- (3.82,1.77);
+\draw (2.13,0.57) node[anchor=north west] {$E_п=0$};
+\begin{scriptsize}
+\draw[color=black] (-4.8,0.12) node {$s$};
+\draw [fill=black] (0,0.5) circle (1.5pt);
+\draw [fill=black] (0,3.5) circle (1.5pt);
+\draw [fill=black] (-2.7,1.4) circle (1.5pt);
+\draw[color=black] (-0.2,3.1) node {$\varphi$};
+\draw[color=black] (2.1,2.72) node {$R$};
+\end{scriptsize}
+\end{tikzpicture}
+%\end{document}

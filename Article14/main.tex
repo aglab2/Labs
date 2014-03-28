@@ -1,0 +1,201 @@
+\documentclass[a4paper,12pt]{article} %размер бумаги устанавливаем А4, шрифт 12пунктов
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{mathtext}
+\usepackage{pstool}
+\usepackage{color}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm} %proof подключаем
+\usepackage{mathtools}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+\date{}
+\author{}
+\usepackage{mathrsfs}
+\usepackage{graphicx} %хотим вставлять в диплом рисунки?
+\usepackage{caption}
+\usepackage{sidecap}
+\usepackage{wrapfig}
+\usepackage{pgf,tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
+\usepackage{pgf, tikz}
+\usepackage[left=3cm,right=2cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usetikzlibrary{arrows}
+
+\usepackage{setspace}
+\graphicspath{{images/}}%путь к рисункам
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother
+
+\newcommand{\divisible}{\mathop{\raisebox{-2pt}{\vdots}}}
+
+\begin{document}
+\begin{flushleft}
+{Пособие №14}
+\hfill
+{\bf ``Алгебраические уравнения, системы и неравенства''}
+\end{flushleft}				
+
+В данной статье мы не будет приводить много теории, поскольку эти темы уже
+были рассмотрены в отдельных статьях, а просто покажем, некоторые примеры, 
+в которых всем этим будем оперировать, и начнем мы с систем уравнений и неравенств.
+
+Пытаться выделить здесь какие-то особые способы решения систем бессмысленно, 
+т.к. их решение как и способ напрямую зависит от тех уравнений или неравенств, которые они содержат.
+Иногда некоторые системы можно привести к эквиватентной путем каких-то преобразований, можно
+максимально их упрощать используя функциональный подход, например метод итераций (см. пособие 13 и 8), либо
+тригонометрические тождества и так далее. Еще очень часто бывает удобно использовать метод
+оценок и некоторые неравенства. Рассмотрим для начала системы алгебраических уравнений.
+
+\begin{center}
+{\large Примеры}
+\end{center}
+
+\label{Problem1}
+\underline{Задача №1}
+Решить систему $\begin{dcases}
+	\sqrt{8y-x}+x=2 \\
+	\sqrt{3y-x}+x+y=2
+\end{dcases}$\newline
+Решение: Сделаем замену 
+$\begin{dcases}
+	u = \sqrt{8y-x} \\
+	v = \sqrt{3y-x}
+\end{dcases}$,
+$\begin{dcases}
+	u^2 = 8y-x \\
+	v^2 = 3y-x
+\end{dcases}\Rightarrow u^2-v^2=5y$.
+Вычтем из первого уравнения второе и получим: $\sqrt{8y-x}=\sqrt{3y-x}+y \Leftrightarrow$
+$5u=5v+u^2-v^2 \Leftrightarrow (v-u)(5-(v+u))=0 \Rightarrow $
+$\left[ \begin{gathered}
+	v=u \hfill \\
+	v+u = 5
+\end{gathered} \right.$
+Если $v=u$, то $y=0$, тогда из первого уравнения $\sqrt{-x}+x=2 \Rightarrow \varnothing$.
+Если $u+v=5$, то  
+$\begin{dcases}
+	\sqrt{8y-x}+x=2 \\
+	\sqrt{3y-x}+\sqrt{8y-x}=5
+\end{dcases} \Leftrightarrow$
+$\begin{dcases}
+	8y-x=(2-x)^2 \\
+	3y-x=(3+x)^2
+\end{dcases}, $
+$\begin{dcases}
+	y=\dfrac{(2-x)^2+x}{8} \\
+	y=\dfrac{(3+x)^2+x}{3}
+\end{dcases} \Rightarrow$
+$3(2-x)^2+3x=8(3+x)^2+8x \Rightarrow x=-14.$
+Имеем 
+$\begin{dcases}
+	x = -14 \\
+	y = \dfrac{121}{4}
+\end{dcases}$
+Ответ: $\left( -14; \dfrac{121}{14} \right)$
+
+\label{Problem2}
+\underline{Задача №2}
+Решить систему $\begin{dcases}
+	2x^2-xy-3y^2=0 \\
+	x^2-3xy+2y^2=-1
+\end{dcases}$\newline
+Решение: Если $x=y=0$, то уравнение первого уравнения пара $(0;0)$, но она не
+является решением второго уравнения, следовательно $x\ne0$, и $y\ne0$, тогда
+поделим оба уравнения на $y^2 \Rightarrow$
+$\begin{dcases}
+	2\left( \dfrac{x}{y} \right)^2-\dfrac{x}{y}-3 = 0 \\
+	\left( \dfrac{x}{y} \right)^2 - 3\dfrac{x}{y} + 2 = -\dfrac{1}{y^2}
+\end{dcases}$ 
+Пусть $\dfrac{x}{y}=t$, решим первое уравнение: $2t^2-t-3=0 \Rightarrow t_{1,2}=-1; \dfrac32$.
+Тогда получим: 
+$\begin{dcases}
+	\dfrac{x}{y} = -1 \\
+	1+3+2=-\dfrac{1}{y^2}
+\end{dcases} \Rightarrow \varnothing$
+или 
+$\begin{dcases}
+	\dfrac{x}{y} = \dfrac32 \\
+	\dfrac94-\dfrac92+2=-\dfrac{1}{y^2}
+\end{dcases} \Rightarrow $
+$\begin{dcases}
+	\dfrac1{y^2}=\dfrac14 \\
+	\dfrac{x}{y} = \dfrac32
+\end{dcases} \Rightarrow$
+$\begin{dcases}	
+	y=-2 \\
+	x=-3
+\end{dcases}$ или
+$\begin{dcases}
+	y=2 \\
+	x=3
+\end{dcases}$\\
+Ответ: $(-3; -2); (3;2)$
+
+\pagebreak
+
+\label{Problem3}
+\underline{Задача №3} Решить систему 
+$\begin{dcases}
+	\sqrt{x+y}+\sqrt{x+2y}=10 \\
+	\sqrt{x+y}+2x+y=16
+\end{dcases}$\newline
+Решение: Пусть $\sqrt{x+y}=u$, $\sqrt{x+2y}=v$, решим уравнение \\
+$\begin{dcases}
+	x+y=u^2 \\
+	x+2y=v^2
+\end{dcases} \Rightarrow$
+$\begin{dcases}
+	y = v^2-u^2 \\
+	x = u^2-2-v^2
+\end{dcases} \Rightarrow$
+$\begin{dcases}
+	y = v^2-u^2 \\
+	x = 2u^2-v^2
+\end{dcases}$, тогда исходная система равносильна
+$\begin{dcases}	
+	u+v=10 \\
+	u+u^2+2u^2-16 = 0
+\end{dcases} \Leftrightarrow$
+$\begin{dcases}
+	3u^2-v^2+u-16 = 0 \\
+	v = 10-u
+\end{dcases} \Leftrightarrow$
+$\begin{dcases}
+	2u^2+21u-116=0 \\
+	v = 10-u
+\end{dcases} \Rightarrow$
+$\begin{dcases}
+	u = 4 \\
+	v = 6
+\end{dcases} \Rightarrow$
+$\begin{dcases}
+	x=-4 \\
+	y=20
+\end{dcases}$
+
+Часто встречаются симметрические, которые имеют вид:
+$\begin{dcases}
+	f(x,y) + g(x,y) = 0 \\
+	f(x,y) g(x,y) = b
+\end{dcases}$, например, 
+$\begin{dcases}
+	x+y=a \\
+	xy=b
+\end{dcases}$.
+Многочлены $x+y$ и $xy$ в левых частях уравнений системы являются простейшими
+симметрическими многочленами, а любой симметрический многочлен от $u$ и $v$, где
+$u=x+y$ и $v=xy$. При решении симметрической системы часто приходится 
+выражать через $u$ и $v$ многочлены вида $P_n(x,y)=x^n+y^n$. Приведем некоторые примеры:\\
+$P_2(x) = x^2+y^2=(x+y)^2-2xy \equiv u^2-2v$\\
+$P_3(x) = x^3+y^3=(x+y)^3-3x^2y-3xy^2=(x+y)^3-3xy(x+y)\equiv u^3-3uv$ \\
+$P_4(x) = x^4+y^4=(x+y)^4-4x^3y-6x^2y^2-4xy^3=(x+y)^4-4xy(x^2+y^2)-6x^2y^2=(x+y)^4-4xy(x+y)^2+2x^2y^2 \equiv u^4-4vu^2+2v^2$\\
+$P_5(x) = x^5+y^5\equiv u^5-5u^3v+5uv^2$\\
+В общем случае имеет место формула:
+\end{document}

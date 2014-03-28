@@ -1,0 +1,31 @@
+%\documentclass[12pt]{article}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+%\pagestyle{empty}
+%\begin{document}
+%\definecolor{uuuuuu}{rgb}{0.27,0.27,0.27}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm]
+\clip(5.4,-0.9) rectangle (11.5,7.6);
+\draw [line width=2pt] (6,7)-- (10,7);
+\draw [line width=1.2pt] (8,7)-- (10,2);
+\draw [->] (4,0) -- (11,0);
+\draw [dash pattern=on 7pt off 7pt] (8,7)-- (8,0);
+\draw (10.82,-0.1) node[anchor=north west] {X};
+\draw (6,7)-- (6.5,7.5);
+\draw (6.5,7)-- (7,7.5);
+\draw (7,7)-- (7.5,7.5);
+\draw (7.5,7)-- (8,7.5);
+\draw (8,7)-- (8.5,7.5);
+\draw (8.5,7)-- (9,7.5);
+\draw (9,7)-- (9.5,7.5);
+\draw (9.5,7)-- (10,7.5);
+\draw (10,7)-- (10.5,7.5);
+\draw [->,line width=2pt] (10,2) -- (10,0.51);
+\draw [->,line width=2pt] (10,2) -- (9.11,4.22);
+\draw (10.21,1.39) node[anchor=north west] {$m\vec g$};
+\draw (9.57,4.14) node[anchor=north west] {$\vec T$};
+\begin{scriptsize}
+\draw [fill=black] (10,2) circle (4.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+%\end{document}

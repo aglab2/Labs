@@ -1,0 +1,23 @@
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.6cm,y=0.6cm]
+\clip(-4.5,-3) rectangle (4.7,7.5);
+\draw [shift={(0,7)},fill=black,fill opacity=0.1] (0,0) -- (-119.74:0.6) arc (-119.74:-90:0.6) -- cycle;
+\draw [rotate around={0:(0,0)}] (0,0) ellipse (2.4cm and 0.48cm);
+\draw [->] (0,7) -- (0,0);
+\draw [->,dash pattern=on 4pt off 4pt] (0,7) -- (0,-2);
+\draw [domain=-4.5:4.5] plot(\x,{(-0-0*\x)/8});
+\draw (-4,0)-- (0,7);
+\draw (0,7)-- (4,0);
+\draw (-4.48,-0.34) node[anchor=north west] {$dQ_i$};
+\draw (3.3,-0.34) node[anchor=north west] {$dQ_i$};
+\draw [->] (0,7) -- (-2,3.5);
+\draw [->] (0,7) -- (2.03,3.44);
+\draw (-2.26,6.22) node[anchor=north west] {$E_i$};
+\draw (1.0,6.22) node[anchor=north west] {$E_i$};
+\begin{scriptsize}
+\draw [fill=black] (-4,0) circle (1.5pt);
+\draw [fill=black] (4,0) circle (1.5pt);
+\draw [fill=black] (0,7) circle (1.5pt);
+\draw[color=black] (-10.22,0.34) node {$a$};
+\draw[color=black] (-0.25,6) node {$\alpha$};
+\end{scriptsize}
+\end{tikzpicture}
