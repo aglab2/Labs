@@ -280,28 +280,25 @@ classdef EValue
         end
         
         function c = subsref(a, s)
-            if (isa(a, 'EValue') == 0 || a.OK ~= 0)
-                error(strcat('First arg is bad EValue object! ErrCode:', dec2bin(a.OK)));
-            end
-            
-            switch (s.type)
-                case '.'
-                switch(s.subs)
-                    case 'Val'
-                        ret = a.Val_;
-                    case 'Err'
-                        ret = a.Err_;
-                    case 'Eps'
-                        ret = a.Eps_;
+            %if (isa(a, 'EValue') == 0 || a.OK ~= 0)
+            %    error(strcat('First arg is bad EValue object! ErrCode:', dec2bin(a.OK)));
+            %end
+            disp(a); disp(s);
+            if length(s) == 1
+                switch (s.type)
+                    case '()'
+                        if (~ismatrix(a))
+                            c = EValue(subsref(a.Val_, s), 'Eps', subsref(a.Eps_, s));
+                        else
+                            c = builtin('subsref', a, s);
+                        end
                     otherwise
-                        error('Incorrect field!');
+                        c = builtin('subsref', a, s);
                 end
-                
-                otherwise
-                ret = EValue(subsref(a.Val_, s), 'Eps', subsref(a.Eps_, s));
+            else
+                q = builtin('subsref', a, s(1));
+                c = subsref(q, s(2:end));
             end
-            
-            c = ret;
         end
         
         function Eplot(dataX, dataY)
